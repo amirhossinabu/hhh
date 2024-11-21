@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پیام عاشقانه برای غزل</title>
+  <style>
+    /* تنظیمات کلی صفحه */
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ff9a9e, #fecfef, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: "Tahoma", sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      text-align: center;
+      color: white;
+      width: 100%;
+      max-width: 500px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff6b81;
+      transform: rotate(45deg);
+      animation: floatHeart 6s infinite;
+    }
+
+    .heart::before, .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff6b81;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-300px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .heart:nth-child(1) { left: 50%; animation-delay: 0s; }
+    .heart:nth-child(2) { left: 55%; animation-delay: 1s; }
+    .heart:nth-child(3) { left: 45%; animation-delay: 2s; }
+    .heart:nth-child(4) { left: 60%; animation-delay: 3s; }
+    .heart:nth-child(5) { left: 40%; animation-delay: 4s; }
+
+    .content {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      animation: zoomIn 2s ease-in-out;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .content img {
+      border-radius: 20px;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .content h1 {
+      font-size: 28px;
+      color: #ff6b81;
+      margin-bottom: 10px;
+    }
+
+    .content p {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <!-- قلوب شناور برای زیبایی -->
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+
+  <!-- محتوای اصلی -->
+  <div class="container">
+    <div class="content">
+      <img src="https://via.placeholder.com/500x300?text=Love" alt="عشق">
+      <h1>غزل عزیزم، تو معنای عشق هستی!</h1>
+      <p>وقتی به چشمان تو نگاه می‌کنم، احساس می‌کنم جهان زیباترین جای ممکن است.  
+         هر لحظه با تو بودن، بهانه‌ای است برای لبخند زدن. ❤️</p>
+    </div>
+    <div class="footer">برای همیشه: به یاد تو، غزل جان...</div>
+  </div>
+</body>
+</html>
+
