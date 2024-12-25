@@ -1,0 +1,209 @@
+/* Resetting defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Body Styles */
+body {
+  font-family: 'Roboto', sans-serif; /* انتخاب فونت مناسب */
+  background-color: #f4f4f4; /* پس‌زمینه روشن */
+  color: #333; /* متن تیره */
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #6f4f37; /* رنگ قهوه‌ای برای منو */
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+  color: white;
+  font-family: 'Pacifico', cursive; /* انتخاب فونت دلنشین و دست‌نویس */
+  font-size: 28px;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.menu a:hover {
+  background-color: #8b5e3c; /* رنگ روشن‌تر هنگام هاور */
+  border-radius: 5px;
+}
+
+/* Hidden menu for mobile */
+.menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #6f4f37;
+  width: 250px;
+  height: 100%;
+  padding-top: 60px;
+  transform: translateX(100%);
+  animation: slideIn 0.3s forwards;
+}
+
+.menu.show {
+  display: block;
+  animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Image and Text Section (Flexbox) */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background-image: url('./src/img/coffee-background.jpg'); /* پس‌زمینه با تصویر قهوه */
+  background-size: cover;
+  background-position: center;
+}
+
+.image-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* پس‌زمینه کمی شفاف */
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.image-text img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.image-text p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Cards Section */
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  background-color: #8b5e3c; /* رنگ مناسب برای بخش عنوان */
+  color: white;
+  text-align: center;
+  padding: 15px;
+  flex: 0 1 auto;
+}
+
+.card-body {
+  flex: 1 0 auto;
+  padding: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header h3 {
+  margin: 0;
+}
+
+.card-body p {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .menu {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-top: 50px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    transform: translateX(100%);
+  }
+
+  .menu.show {
+    display: block;
+  }
+
+  .card-container {
+    justify-content: center;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
